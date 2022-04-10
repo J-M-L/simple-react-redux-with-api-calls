@@ -1,0 +1,35 @@
+{
+  "name": "@j-m-l/simple-react-redux-with-api-calls",
+  "version": "1.0.0",
+  "description": "Library to help the creation of redux store and api calls",
+  "main": "index.js",
+  "scripts": {
+    "test.unit": "jest -c tests/jest.config.unit.js --verbose",
+    "test.integration": "jest -c tests/jest.config.integration.js --runInBand --verbose",
+    "test": "npm run test.unit && npm run test.integration"
+  },
+  "author": "j-m-l",
+  "license": "ISC",
+  "homepage": "https://github.com/J-M-L/simple-mongo-express-endpoints",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/J-M-L/simple-mongo-express-endpoints"
+  },
+  "keywords": [
+    "react",
+    "redux",
+    "store",
+    "simple",
+    "library",
+    "prototyping"
+  ],
+  "devDependencies": {
+    "eslint": "^8.13.0",
+    "eslint-config-airbnb": "^19.0.4",
+    "eslint-plugin-import": "^2.26.0",
+    "eslint-plugin-jsx-a11y": "^6.5.1",
+    "eslint-plugin-react": "^7.29.4",
+    "eslint-plugin-react-hooks": "^4.4.0",
+    "jest": "^27.5.1"
+  }
+}
