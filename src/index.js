@@ -1,5 +1,5 @@
-import createReducer from './createReducer';
-import createDispatchers from './createDispatchers';
+const createReducer = require('./createReducer');
+const createDispatchers = require('./createDispatchers');
 
 const SRRWAC = (name, axiosInstance, path, wantedEndpoints) => {
   const Reducer = createReducer(name);
@@ -13,4 +13,4 @@ const SRRWAC = (name, axiosInstance, path, wantedEndpoints) => {
   };
 };
 
-export default SRRWAC;
+module.exports = SRRWAC;

@@ -38,4 +38,4 @@ const apiRequests = {
   },
 };
 
-export default apiRequests;
+module.exports = apiRequests;

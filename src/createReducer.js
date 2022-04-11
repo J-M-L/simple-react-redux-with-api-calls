@@ -1,7 +1,7 @@
 const initialState = {
   all: [],
   current: {},
-}
+};
 
 const Reducer = (name) => (state = initialState, action) => {
   let oldState = { ...state };
@@ -34,5 +34,4 @@ const Reducer = (name) => (state = initialState, action) => {
   return oldState;
 };
 
-
-export default Reducer;
+module.exports = Reducer;
