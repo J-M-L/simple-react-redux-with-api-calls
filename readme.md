@@ -24,7 +24,17 @@ Call it with following values (existing endpoints listed below)
 const { Reducer, Dispatchers } = SRRWAC(ReducerName, apiPath, wantedEndpoints, axiosInstance);
 ```
 
-Example code
+This will create a store for you with following initialState.
+GET /:id will write the current
+all other endpoints will update the All array
+```js
+const initialState = {
+  all: [],
+  current: {},
+};
+```
+
+## Example code
 
 testReducer.js
 ```js
