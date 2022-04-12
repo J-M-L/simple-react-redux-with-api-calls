@@ -1,10 +1,14 @@
+/* eslint-disable default-param-last */
 const initialState = {
   all: [],
   current: {},
 };
 
+let toBeUpdated;
+let editedAll;
+
 const Reducer = (name) => (state = initialState, action) => {
-  let oldState = { ...state };
+  const oldState = { ...state };
 
   switch (action.type) {
     case `${name}/get`:
@@ -17,12 +21,15 @@ const Reducer = (name) => (state = initialState, action) => {
       oldState.all = [...oldState.all, action.value];
       break;
     case `${name}/update`:
-      const toBeUpdated = oldState.all.find((item) => item._id === action.value._id);
-      Object.entries(action.value).forEach(([key, value]) => toBeUpdated[key] = value);
+      editedAll = [...oldState.all];
+      toBeUpdated = editedAll.find((item) => item._id === action.value._id);
+      Object.entries(action.value).forEach(([key, value]) => { toBeUpdated[key] = value; });
+      oldState.all = editedAll;
       break;
     case `${name}/replace`:
-      const toBeReplaced = oldState.all.find((item) => item._id === action.value._id);
-      Object.entries(action.value).forEach(([key, value]) => toBeReplaced[key] = value);
+      editedAll = oldState.all.filter((item) => item._id !== action.value._id);
+      editedAll.push(action.value);
+      oldState.all = editedAll;
       break;
     case `${name}/delete`:
       oldState.all = oldState.all.filter((item) => item._id !== action.value._id);
@@ -30,7 +37,6 @@ const Reducer = (name) => (state = initialState, action) => {
     default:
       break;
   }
-  
   return oldState;
 };
 

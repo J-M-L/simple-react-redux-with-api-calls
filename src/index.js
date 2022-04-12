@@ -1,7 +1,7 @@
 const createReducer = require('./createReducer');
 const createDispatchers = require('./createDispatchers');
 
-const SRRWAC = (name, axiosInstance, path, wantedEndpoints) => {
+const SRRWAC = (name, path, wantedEndpoints, axiosInstance) => {
   const Reducer = createReducer(name);
   Object.defineProperty(Reducer, 'name', { value: name });
 

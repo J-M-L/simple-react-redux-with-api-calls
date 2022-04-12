@@ -7,8 +7,8 @@ const apiRequests = {
   },
   getAll: {
     handler: (name, path, axiosInstance) => async (dispatch) => {
+      console.log(path);
       const { data } = await axiosInstance.get(path);
-      console.log(data);
       dispatch({ type: `${name}/getAll`, value: data });
     },
   },
