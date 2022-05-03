@@ -1,8 +1,8 @@
 {
   "name": "@j-m-l/simple-react-redux-with-api-calls",
-  "version": "1.0.2",
+  "version": "1.0.3",
   "description": "Library to help the creation of redux store and api calls",
-  "main": "index.js",
+  "main": "src/index.js",
   "scripts": {
     "test.unit": "jest -c tests/jest.config.unit.js --verbose",
     "test.integration": "jest -c tests/jest.config.integration.js --runInBand --verbose",
